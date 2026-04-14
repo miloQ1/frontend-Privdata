@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# Privdata - AuthService
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Repositorios de PrivData:
 
-Currently, two official plugins are available:
+## authService: [Link al repo](https://github.com/WVinet/authservice-PrivData.git)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Stack Tecnológico
 
-## React Compiler
+### Frontend
+- **React 19** - Librería de UI
+- **TypeScript** - Desarrollo con tipos seguros
+- **Vite** - Herramienta de construcción ultrarrápida
+- **React Router v7** - Enrutamiento del lado del cliente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Gestión de Estado y Obtención de Datos
+- **TanStack React Query v5** - Gestión de estado del servidor y caché
+- **Axios** - Cliente HTTP
+- **React Hook Form** - Manejo de formularios
+- **Zod** - Validación de esquemas
 
-## Expanding the ESLint configuration
+### Componentes UI y Estilos
+- **Radix UI** - Componentes sin estilos y accesibles
+  - Accordion, Dialog, Dropdown, Select, Tabs, Tooltip, etc.
+- **Tailwind CSS** - Framework CSS basado en utilidades
+- **Lucide React** - Librería de iconos
+- **Next Themes** - Cambio de temas (modo oscuro/claro)
+- **Sonner** - Notificaciones toast
+- **Embla Carousel** - Componente carrusel
+- **React Resizable Panels** - Paneles redimensionables
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Utilidades
+- **Recharts** - Visualización de datos con gráficos
+- **date-fns** - Manipulación de fechas
+- **class-variance-authority** - Gestión de variantes de componentes
+- **clsx/tailwind-merge** - Composición de clases CSS
+- **cmdk** - Componente de menú de comandos
+- **Vaul** - Componente drawer
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Desarrollo y Calidad
+- **ESLint** - Linting de código
+- **TypeScript ESLint** - Linting consciente de tipos
+- **PostCSS** - Procesamiento de CSS
+- **Autoprefixer** - Prefijos de vendedores CSS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Scripts
+```bash
+npm run dev        # Inicia servidor de desarrollo en http://localhost:5173
+npm run build      # Compila TypeScript y construye para producción
+npm run preview    # Vista previa de la construcción de producción
+npm run lint       # Ejecuta ESLint
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Características
+- ✅ **Autenticación segura** - Sistema de login con pruebas de JWT
+- ✅ **Rutas protegidas** - AppLayout verifica estado de autenticación
+- ✅ **Gestión de usuarios** - CRUD completo de usuarios
+- ✅ **Gestión de datos personales** - Módulo de titulares
+- ✅ **Consentimientos GDPR/LOPD** - Gestión de consentimientos de usuarios
+- ✅ **Derechos ARCO** - Acceso, rectificación, cancelación y oposición de datos
+- ✅ **Auditoría** - Registro y seguimiento de acciones
+- ✅ **Tema oscuro/claro** - Soporte completo de temas
+- ✅ **Diseño responsivo** - Optimizado para móvil y desktop
+- ✅ **Validación de formularios** - Con React Hook Form y Zod
+- ✅ **Visualización de datos** - Gráficos con Recharts
+- ✅ **Notificaciones** - Toast notifications con Sonner
+- ✅ **Componentes accesibles** - Basados en Radix UI
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
