@@ -9,6 +9,7 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Eye,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/hooks/use-auth"
@@ -103,6 +104,34 @@ export function AppSidebar() {
           })}
         </ul>
       </nav>
+
+      {/* DEV — Vista del titular */}
+      <div className="border-t border-sidebar-border px-2 py-2">
+        <Link
+          to="/portal"
+          title="Vista Titular (DEV)"
+          className={cn(
+            "flex items-center gap-2 px-3 py-2 rounded-md text-xs transition-colors text-sidebar-foreground/60 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+            collapsed && "justify-center px-2"
+          )}
+        >
+          <Eye className="w-4 h-4 shrink-0" />
+          {!collapsed && (
+            <>
+              <span>Vista Titular</span>
+              <span
+                className="ml-auto text-[10px] font-bold px-1.5 py-0.5 rounded"
+                style={{
+                  background: "hsl(var(--sidebar-primary))",
+                  color: "hsl(var(--sidebar-primary-foreground))",
+                }}
+              >
+                DEV
+              </span>
+            </>
+          )}
+        </Link>
+      </div>
 
       {/* Footer — usuario */}
       <div className="border-t border-sidebar-border p-3">
