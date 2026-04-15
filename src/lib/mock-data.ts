@@ -143,6 +143,182 @@ export const mockArcoRequests: ArcoRequest[] = [
   },
 ]
 
+// ─── Portal Titular Interfaces ────────────────────────────────────────────────
+
+export interface TitularPortalConsent {
+  id: string
+  group: string
+  groupIcon: string
+  purpose: string
+  description: string
+  category: "necesario" | "opcional" | "marketing" | "salud" | "terceros"
+  enabled: boolean
+  required: boolean // si es true, no se puede revocar
+  grantedAt: string | null
+}
+
+export interface TitularArcoSolicitud {
+  id: string
+  type: "acceso" | "rectificacion" | "supresion" | "oposicion" | "portabilidad" | "bloqueo"
+  status: "en_tramite" | "resuelta" | "rechazada"
+  createdAt: string
+  deadline: string
+  deadlineDays: number
+  elapsedDays: number
+  steps: { label: string; status: "done" | "active" | "pending" }[]
+  resolution?: string
+  urgent?: boolean
+}
+
+export interface TitularPortalData {
+  id: string
+  rut: string
+  name: string
+  email: string
+  lastAccess: string
+  activeConsents: number
+  pendingRequests: number
+  resolvedRequests: number
+  systemsCount: number
+  consents: TitularPortalConsent[]
+  solicitudes: TitularArcoSolicitud[]
+}
+
+// ─── Mock Portal Titular ──────────────────────────────────────────────────────
+
+export const mockTitularPortal: TitularPortalData = {
+  id: "t2",
+  rut: "9.876.543-2",
+  name: "Juan Pérez",
+  email: "jperez@outlook.com",
+  lastAccess: "2026-04-13T18:42:00",
+  activeConsents: 4,
+  pendingRequests: 1,
+  resolvedRequests: 2,
+  systemsCount: 12,
+  consents: [
+    // Grupo: Datos de salud
+    {
+      id: "pc1",
+      group: "Datos de salud y prescripciones",
+      groupIcon: "🏥",
+      purpose: "Atención farmacéutica y dispensación de medicamentos",
+      description: "Necesario para procesar sus recetas y entregar medicamentos.",
+      category: "necesario",
+      enabled: true,
+      required: true,
+      grantedAt: "2025-03-10",
+    },
+    {
+      id: "pc2",
+      group: "Datos de salud y prescripciones",
+      groupIcon: "🏥",
+      purpose: "Recordatorio de medicamentos crónicos",
+      description: "Le enviaremos alertas cuando deba renovar sus medicamentos habituales.",
+      category: "salud",
+      enabled: true,
+      required: false,
+      grantedAt: "2025-03-10",
+    },
+    // Grupo: Marketing
+    {
+      id: "pc3",
+      group: "Marketing y comunicaciones",
+      groupIcon: "🎯",
+      purpose: "Ofertas y promociones personalizadas",
+      description: "Recibirá descuentos y promociones basados en su historial de compras.",
+      category: "marketing",
+      enabled: true,
+      required: false,
+      grantedAt: "2025-03-10",
+    },
+    {
+      id: "pc4",
+      group: "Marketing y comunicaciones",
+      groupIcon: "🎯",
+      purpose: "Comunicaciones del programa de fidelización",
+      description: "Información sobre beneficios, puntos acumulados y recompensas.",
+      category: "marketing",
+      enabled: true,
+      required: false,
+      grantedAt: "2025-03-10",
+    },
+    {
+      id: "pc5",
+      group: "Marketing y comunicaciones",
+      groupIcon: "🎯",
+      purpose: "Compartir datos con laboratorios y proveedores",
+      description: "Sus datos podrán ser compartidos con laboratorios asociados para mejorar ofertas.",
+      category: "terceros",
+      enabled: false,
+      required: false,
+      grantedAt: null,
+    },
+    // Grupo: Experiencia digital
+    {
+      id: "pc6",
+      group: "Experiencia digital",
+      groupIcon: "🌐",
+      purpose: "Análisis de navegación y mejora de la app",
+      description: "Usamos datos de uso para mejorar continuamente la experiencia en la aplicación.",
+      category: "opcional",
+      enabled: true,
+      required: false,
+      grantedAt: "2025-04-01",
+    },
+  ],
+  solicitudes: [
+    {
+      id: "SOL-2026-00412",
+      type: "acceso",
+      status: "en_tramite",
+      createdAt: "2026-04-01",
+      deadline: "2026-04-22",
+      deadlineDays: 15,
+      elapsedDays: 2,
+      steps: [
+        { label: "Solicitud recibida", status: "done" },
+        { label: "Verificación de identidad", status: "done" },
+        { label: "Revisión interna", status: "active" },
+        { label: "Preparación de respuesta", status: "pending" },
+        { label: "Entrega al titular", status: "pending" },
+      ],
+    },
+    {
+      id: "SOL-2026-00318",
+      type: "rectificacion",
+      status: "resuelta",
+      createdAt: "2026-03-10",
+      deadline: "2026-04-01",
+      deadlineDays: 15,
+      elapsedDays: 15,
+      steps: [
+        { label: "Solicitud recibida", status: "done" },
+        { label: "Verificación de identidad", status: "done" },
+        { label: "Corrección aplicada", status: "done" },
+        { label: "Notificación enviada", status: "done" },
+      ],
+      resolution: "Sus datos fueron corregidos exitosamente.",
+    },
+    {
+      id: "SOL-2025-00891",
+      type: "bloqueo",
+      status: "resuelta",
+      createdAt: "2025-11-20",
+      deadline: "2025-11-22",
+      deadlineDays: 2,
+      elapsedDays: 1,
+      urgent: true,
+      steps: [
+        { label: "Solicitud recibida", status: "done" },
+        { label: "Bloqueo temporal aplicado", status: "done" },
+        { label: "Confirmación enviada", status: "done" },
+      ],
+      resolution: "Bloqueo temporal aplicado en 1 día hábil.",
+    },
+  ],
+}
+
 export const mockAuditEvents: AuditEvent[] = [
   { id: "ae1", action: "LOGIN", entity: "Usuario", entityId: "u1", userId: "u1", userName: "Carlos Méndez", details: "Inicio de sesión exitoso desde IP 192.168.1.1", timestamp: "2024-07-10T08:30:00" },
   { id: "ae2", action: "CREATE", entity: "Titular", entityId: "t6", userId: "u2", userName: "Ana Torres", details: "Nuevo titular registrado: Diego Navarro (7.654.321-0)", timestamp: "2024-07-10T09:15:00" },

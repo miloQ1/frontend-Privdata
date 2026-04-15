@@ -5,6 +5,11 @@
 ## authService: [Link al repo](https://github.com/WVinet/authservice-PrivData.git)
 ## organizationService: [Link al repo](https://github.com/miloQ1/organizationService--PrivData.git)
 
+## Miembros del equipo:
+## Arelis Tovar
+## Wilfred Vinet
+## Camilo Queupil
+
 
 ## 🛠️ Stack Tecnológico
 
@@ -61,10 +66,27 @@ npm run lint       # Ejecuta ESLint
 - ✅ **Consentimientos GDPR/LOPD** - Gestión de consentimientos de usuarios
 - ✅ **Derechos ARCO** - Acceso, rectificación, cancelación y oposición de datos
 - ✅ **Auditoría** - Registro y seguimiento de acciones
+- ✅ **Portal Titular** - Interfaz dedicada para que los titulares gestionen sus datos, consentimientos y solicitudes ARCO
 - ✅ **Tema oscuro/claro** - Soporte completo de temas
 - ✅ **Diseño responsivo** - Optimizado para móvil y desktop
 - ✅ **Validación de formularios** - Con React Hook Form y Zod
 - ✅ **Visualización de datos** - Gráficos con Recharts
 - ✅ **Notificaciones** - Toast notifications con Sonner
 - ✅ **Componentes accesibles** - Basados en Radix UI
+
+## 📱 Portal del Titular
+
+**Módulo exclusivo para usuarios finales (titulares)** - Accesible en `/portal` sin autenticación de administrador.
+
+### Funcionalidades
+- **Inicio (Dashboard)** - Resumen de privacidad con estadísticas de consentimientos, solicitudes y sistemas que usan sus datos
+- **Mis Consentimientos** - Visualización y control de consentimientos otorgados, con capacidad de revocar los opcionales
+- **Derechos ARCO** - Solicitud interactiva de Acceso, Rectificación, Supresión, Oposición, Portabilidad y Bloqueo temporal
+- **Seguimiento** - Estado en tiempo real de solicitudes abiertas y resoluciones con timeline visual de pasos
+
+### Diseño
+- Layout con sidebar colapsable optimizado para móvil (drawer)
+- Paleta de colores cálida: verde esmeralda profundo + dorado/miel
+- Componentes reutilizables con Radix UI y Tailwind CSS
+- Transiciones suaves y feedback visual en todas las interacciones
 

@@ -13,7 +13,11 @@ export function AppLayout() {
     <div className="flex h-screen overflow-hidden bg-background">
       <AppSidebar />
       <div className="flex flex-col flex-1 overflow-hidden">
-        <header className="h-14 border-b border-border flex items-center px-6 shrink-0">
+        <header className="h-14 border-b border-border flex items-center px-6 shrink-0 bg-card">
+          <div
+            className="w-1 h-5 rounded-full mr-3"
+            style={{ background: "hsl(var(--primary))" }}
+          />
           <p className="text-sm text-muted-foreground">
             Sistema de Gestión — Protección de Datos Personales · Ley 21.719
           </p>

@@ -4,54 +4,62 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    /* Fondos — off-white cálido, nada de azul frío */
+    --background: 32 18% 96%;
+    --foreground: 20 25% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 20 25% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 20 25% 10%;
 
-    --primary: 215 70% 45%;
+    /* Primario — verde esmeralda profundo */
+    --primary: 164 58% 28%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 94%;
-    --secondary-foreground: 222 47% 11%;
+    /* Secundario — verde esmeralda muy pálido */
+    --secondary: 164 25% 91%;
+    --secondary-foreground: 20 25% 10%;
 
-    --muted: 210 40% 94%;
-    --muted-foreground: 215 16% 47%;
+    /* Muted — arena apagada */
+    --muted: 32 15% 91%;
+    --muted-foreground: 20 12% 44%;
 
-    --accent: 170 60% 40%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent — miel/dorado cálido para highlights */
+    --accent: 40 88% 52%;
+    --accent-foreground: 20 25% 10%;
 
-    --destructive: 0 84% 60%;
+    /* Semánticos */
+    --destructive: 4 82% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 60% 40%;
+    --success: 148 55% 36%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 38 92% 50%;
+    --warning: 36 90% 48%;
     --warning-foreground: 0 0% 100%;
 
-    --info: 199 89% 48%;
+    --info: 196 80% 42%;
     --info-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 215 70% 45%;
+    /* Bordes — cálidos, no azulados */
+    --border: 32 18% 86%;
+    --input: 32 18% 86%;
+    --ring: 164 58% 28%;
 
-    --radius: 0.5rem;
+    /* Radio base — esquinas más redondeadas */
+    --radius: 0.75rem;
 
-    /* Sidebar — siempre oscura */
-    --sidebar-background: 220 20% 12%;
-    --sidebar-foreground: 210 15% 80%;
-    --sidebar-primary: 215 70% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 18%;
-    --sidebar-accent-foreground: 210 15% 90%;
-    --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 215 70% 55%;
+    /* Sidebar — carbón verdoso, siempre oscura */
+    --sidebar-background: 164 18% 10%;
+    --sidebar-foreground: 150 12% 76%;
+    --sidebar-primary: 40 88% 56%;
+    --sidebar-primary-foreground: 20 25% 10%;
+    --sidebar-accent: 164 18% 16%;
+    --sidebar-accent-foreground: 150 12% 93%;
+    --sidebar-border: 164 18% 16%;
+    --sidebar-ring: 40 88% 56%;
   }
 }
 

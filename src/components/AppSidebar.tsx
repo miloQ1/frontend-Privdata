@@ -5,7 +5,7 @@ import {
   UserCheck,
   FileCheck,
   ClipboardList,
-  Shield,
+  DatabaseZap,
   LogOut,
   ChevronLeft,
   ChevronRight,
@@ -26,7 +26,7 @@ const navItems: NavItem[] = [
   { label: "Titulares",          path: "/titulares",        icon: UserCheck },
   { label: "Consentimientos",    path: "/consentimientos",  icon: FileCheck },
   { label: "Solicitudes ARCO",   path: "/arco",             icon: ClipboardList },
-  { label: "Auditoría",          path: "/auditoria",        icon: Shield },
+  { label: "Auditoría",          path: "/auditoria",        icon: DatabaseZap },
 ]
 
 export function AppSidebar() {
@@ -46,14 +46,20 @@ export function AppSidebar() {
       <div className="flex items-center justify-between px-4 py-5 border-b border-sidebar-border">
         {!collapsed && (
           <div className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-sidebar-primary shrink-0" />
+            <div className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-black shrink-0 bg-sidebar-primary text-sidebar-primary-foreground">
+              PD
+            </div>
             <div className="overflow-hidden">
               <p className="text-sm font-semibold text-sidebar-accent-foreground leading-tight">PrivData</p>
               <p className="text-xs text-sidebar-foreground/60 leading-tight">Ley 21.719</p>
             </div>
           </div>
         )}
-        {collapsed && <Shield className="w-5 h-5 text-sidebar-primary mx-auto" />}
+        {collapsed && (
+          <div className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-black mx-auto bg-sidebar-primary text-sidebar-primary-foreground">
+            PD
+          </div>
+        )}
         <button
           onClick={() => setCollapsed((c) => !c)}
           className={cn(

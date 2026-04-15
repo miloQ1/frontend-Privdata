@@ -9,6 +9,7 @@ import TitularesPage from "@/pages/TitularesPage"
 import ConsentsPage from "@/pages/ConsentsPage"
 import ArcoPage from "@/pages/ArcoPage"
 import AuditPage from "@/pages/AuditPage"
+import TitularPortalPage from "@/pages/TitularPortalPage"
 import NotFound from "@/pages/NotFound"
 
 const queryClient = new QueryClient()
@@ -23,6 +24,9 @@ function App() {
 
           {/* Ruta pública */}
           <Route path="/login" element={<LoginPage />} />
+
+          {/* Portal del Titular — layout propio, sin auth de admin */}
+          <Route path="/portal" element={<TitularPortalPage />} />
 
           {/* Rutas protegidas (AppLayout verifica auth) */}
           <Route element={<AppLayout />}>
