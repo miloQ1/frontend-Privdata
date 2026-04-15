@@ -44,6 +44,7 @@ export default function AuditPage() {
           </div>
         </CardHeader>
         <CardContent className="pt-0">
+          <div className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
@@ -83,6 +84,7 @@ export default function AuditPage() {
               )}
             </TableBody>
           </Table>
+          </div>
         </CardContent>
       </Card>
     </div>
