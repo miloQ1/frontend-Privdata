@@ -1,11 +1,11 @@
-# Privdata - AuthService
+# Privdata FrontEnd - PROYECTO ACADEMICO
 
 ## Repositorios de PrivData:
 
 ## authService: [Link al repo](https://github.com/WVinet/authservice-PrivData.git)
 ## organizationService: [Link al repo](https://github.com/miloQ1/organizationService--PrivData.git)
 
-## Miembros del equipo:
+# Miembros del equipo:
 ## Arelis Tovar
 ## Wilfred Vinet
 ## Camilo Queupil
