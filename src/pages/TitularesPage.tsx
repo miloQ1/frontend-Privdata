@@ -18,7 +18,7 @@ export default function TitularesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-y-3">
         <div>
           <h1 className="text-2xl font-bold text-foreground">Titulares</h1>
           <p className="text-muted-foreground text-sm mt-1">Registro de titulares de datos personales</p>
@@ -42,6 +42,7 @@ export default function TitularesPage() {
           </div>
         </CardHeader>
         <CardContent className="pt-0">
+          <div className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
@@ -76,6 +77,7 @@ export default function TitularesPage() {
               )}
             </TableBody>
           </Table>
+          </div>
         </CardContent>
       </Card>
     </div>
