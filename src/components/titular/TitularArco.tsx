@@ -17,7 +17,7 @@ type ArcoRight = {
 
 const rights: ArcoRight[] = [
   {
-    id: "acceso",
+    id: "access",
     icon: "🔍",
     label: "Acceso",
     deadline: "15 días hábiles",
@@ -26,7 +26,7 @@ const rights: ArcoRight[] = [
     variant: "primary",
   },
   {
-    id: "rectificacion",
+    id: "rectification",
     icon: "✏️",
     label: "Rectificación",
     deadline: "15 días hábiles",
@@ -35,7 +35,7 @@ const rights: ArcoRight[] = [
     variant: "primary",
   },
   {
-    id: "supresion",
+    id: "suppression",
     icon: "🗑️",
     label: "Supresión",
     deadline: "15 días hábiles",
@@ -44,7 +44,7 @@ const rights: ArcoRight[] = [
     variant: "danger",
   },
   {
-    id: "oposicion",
+    id: "opposition",
     icon: "🚫",
     label: "Oposición",
     deadline: "15 días hábiles",
@@ -53,7 +53,7 @@ const rights: ArcoRight[] = [
     variant: "primary",
   },
   {
-    id: "portabilidad",
+    id: "portability",
     icon: "📦",
     label: "Portabilidad",
     deadline: "15 días hábiles",
@@ -62,7 +62,7 @@ const rights: ArcoRight[] = [
     variant: "primary",
   },
   {
-    id: "bloqueo",
+    id: "blocking",
     icon: "🔒",
     label: "Bloqueo",
     deadline: "2 días hábiles",

@@ -8,11 +8,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { StatusBadge } from "@/components/StatusBadge"
 
 const typeLabels: Record<string, string> = {
-  access:         "Acceso",
-  rectification:  "Rectificación",
-  cancellation:   "Cancelación",
-  opposition:     "Oposición",
-  portability:    "Portabilidad",
+  access:        "Acceso",
+  rectification: "Rectificación",
+  suppression:   "Supresión",
+  opposition:    "Oposición",
+  portability:   "Portabilidad",
+  blocking:      "Bloqueo",
 }
 
 export default function ArcoPage() {
@@ -30,12 +31,12 @@ export default function ArcoPage() {
         <div>
           <h1 className="text-2xl font-bold text-foreground">Solicitudes ARCO</h1>
           <p className="text-muted-foreground text-sm mt-1">
-            Acceso, Rectificación, Cancelación, Oposición y Portabilidad
+            Acceso, Rectificación, Supresión, Oposición, Portabilidad y Bloqueo
           </p>
         </div>
         <Button>
           <PlusCircle className="w-4 h-4" />
-          Nueva Solicitud
+          Registrar Solicitud
         </Button>
       </div>
 

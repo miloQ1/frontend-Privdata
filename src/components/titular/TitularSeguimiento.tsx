@@ -6,21 +6,21 @@ interface Props {
 }
 
 const typeLabels: Record<TitularArcoSolicitud["type"], string> = {
-  acceso:       "Derecho de Acceso",
-  rectificacion:"Derecho de Rectificación",
-  supresion:    "Derecho de Supresión",
-  oposicion:    "Derecho de Oposición",
-  portabilidad: "Derecho de Portabilidad",
-  bloqueo:      "Bloqueo Temporal de Datos",
+  access:        "Derecho de Acceso",
+  rectification: "Derecho de Rectificación",
+  suppression:   "Derecho de Supresión",
+  opposition:    "Derecho de Oposición",
+  portability:   "Derecho de Portabilidad",
+  blocking:      "Bloqueo Temporal de Datos",
 }
 
 const typeIcons: Record<TitularArcoSolicitud["type"], string> = {
-  acceso:       "🔍",
-  rectificacion:"✏️",
-  supresion:    "🗑️",
-  oposicion:    "🚫",
-  portabilidad: "📦",
-  bloqueo:      "🔒",
+  access:        "🔍",
+  rectification: "✏️",
+  suppression:   "🗑️",
+  opposition:    "🚫",
+  portability:   "📦",
+  blocking:      "🔒",
 }
 
 const statusConfig: Record<
