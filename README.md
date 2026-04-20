@@ -4,7 +4,7 @@
 
 ## authService: [Link al repo](https://github.com/WVinet/authservice-PrivData.git)
 ## organizationService: [Link al repo](https://github.com/miloQ1/organizationService--PrivData.git)
-## complianceService: [Link al repo](hhttps://github.com/miloQ1/complianceService-PrivData.git)
+## complianceService: [Link al repo] (https://github.com/miloQ1/complianceService-PrivData.git)
 
 ## Miembros del equipo:
 ## Arelis Tovar
@@ -17,7 +17,7 @@
 ### Frontend
 - **React 19** - Librería de UI
 - **TypeScript** - Desarrollo con tipos seguros
-- **Vite** - Herramienta de construcción ultrarrápida
+- **Vite** - Herramienta de construcción ultrarrápidaS
 - **React Router v7** - Enrutamiento del lado del cliente
 
 ### Gestión de Estado y Obtención de Datos
