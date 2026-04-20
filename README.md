@@ -1,4 +1,4 @@
-# Privdata Front
+# Privdata FrontEnd ACADÉMICO
 
 ## Repositorios de PrivData:
 
@@ -6,7 +6,7 @@
 ## organizationService: [Link al repo](https://github.com/miloQ1/organizationService--PrivData.git)
 ## complianceService: [Link al repo](hhttps://github.com/miloQ1/complianceService-PrivData.git)
 
-## Miembros del equipo:
+# Miembros del equipo:
 ## Arelis Tovar
 ## Wilfred Vinet
 ## Camilo Queupil
