@@ -28,20 +28,12 @@ const actionCards = [
     tab: "seguimiento" as TitularTab,
     accent: "hsl(var(--success))",
   },
-  {
-    icon: "📁",
-    title: "Descargar Datos",
-    description: "Exporta un resumen completo de tu información.",
-    tab: "arco" as TitularTab,
-    accent: "hsl(var(--accent))",
-  },
 ]
 
 const stats = [
   { value: 4,  label: "Consentimientos activos", color: "hsl(var(--primary))",     bg: "hsl(var(--secondary))" },
   { value: 1,  label: "En trámite",               color: "hsl(var(--warning))",     bg: "hsl(var(--warning) / 0.1)" },
   { value: 2,  label: "Resueltas",                color: "hsl(var(--success))",     bg: "hsl(var(--success) / 0.1)" },
-  { value: 12, label: "Sistemas con mis datos",   color: "hsl(var(--info))",        bg: "hsl(var(--info) / 0.1)" },
 ]
 
 export default function TitularInicio({ data, onNavigate }: Props) {
@@ -152,7 +144,7 @@ export default function TitularInicio({ data, onNavigate }: Props) {
         >
           ¿Qué deseas hacer?
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {actionCards.map((card) => (
             <button
               key={card.title}
@@ -229,42 +221,31 @@ export default function TitularInicio({ data, onNavigate }: Props) {
           </button>
         </div>
 
-        {/* Mis sistemas */}
+        {/* Finalidades de tratamiento — próximamente */}
         <div
           className="bg-white rounded-2xl border p-5 shadow-sm"
           style={{ borderColor: "hsl(var(--border))" }}
         >
-          <h3
-            className="text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Sistemas que usan mis datos
-          </h3>
-          <div className="space-y-2">
-            {[
-              { name: "CRM Clientes",         type: "Comercial" },
-              { name: "App Farmacéutica",     type: "Salud" },
-              { name: "Plataforma fidelidad", type: "Marketing" },
-              { name: "Sistema de cobros",    type: "Financiero" },
-            ].map((s) => (
-              <div key={s.name} className="flex items-center justify-between">
-                <span className="text-xs" style={{ color: "hsl(var(--foreground))" }}>
-                  {s.name}
-                </span>
-                <span
-                  className="text-xs px-2 py-0.5 rounded-full"
-                  style={{ background: "hsl(var(--muted))", color: "hsl(var(--muted-foreground))" }}
-                >
-                  {s.type}
-                </span>
-              </div>
-            ))}
+          <div className="flex items-center justify-between mb-4">
+            <h3
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "hsl(var(--muted-foreground))" }}
+            >
+              Finalidades de tratamiento
+            </h3>
+            <span
+              className="text-xs px-2 py-0.5 rounded-full font-semibold"
+              style={{
+                background: "hsl(var(--muted))",
+                color: "hsl(var(--muted-foreground))",
+              }}
+            >
+              Próximamente
+            </span>
           </div>
-          <p
-            className="mt-3 text-xs"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            +8 sistemas adicionales
+          <p className="text-xs leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+            Aquí podrás ver todas las finalidades para las que se tratan tus datos personales,
+            incluyendo las bases legales y los responsables de cada tratamiento.
           </p>
         </div>
 

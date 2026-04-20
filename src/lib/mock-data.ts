@@ -36,7 +36,7 @@ export interface ArcoRequest {
   id: string
   titularId: string
   titularName: string
-  type: "access" | "rectification" | "cancellation" | "opposition" | "portability"
+  type: "access" | "rectification" | "suppression" | "opposition" | "portability" | "blocking"
   status: "pending" | "in_progress" | "resolved" | "rejected"
   assignee?: string
   createdAt: string
@@ -127,7 +127,7 @@ export const mockArcoRequests: ArcoRequest[] = [
   },
   {
     id: "ARCO-003", titularId: "t3", titularName: "Luisa Contreras",
-    type: "cancellation", status: "pending",
+    type: "suppression", status: "pending",
     createdAt: "2024-07-01", deadline: "2024-08-01",
   },
   {
@@ -159,7 +159,7 @@ export interface TitularPortalConsent {
 
 export interface TitularArcoSolicitud {
   id: string
-  type: "acceso" | "rectificacion" | "supresion" | "oposicion" | "portabilidad" | "bloqueo"
+  type: "access" | "rectification" | "suppression" | "opposition" | "portability" | "blocking"
   status: "en_tramite" | "resuelta" | "rechazada"
   createdAt: string
   deadline: string
@@ -179,7 +179,6 @@ export interface TitularPortalData {
   activeConsents: number
   pendingRequests: number
   resolvedRequests: number
-  systemsCount: number
   consents: TitularPortalConsent[]
   solicitudes: TitularArcoSolicitud[]
 }
@@ -195,7 +194,6 @@ export const mockTitularPortal: TitularPortalData = {
   activeConsents: 4,
   pendingRequests: 1,
   resolvedRequests: 2,
-  systemsCount: 12,
   consents: [
     // Grupo: Datos de salud
     {
@@ -270,7 +268,7 @@ export const mockTitularPortal: TitularPortalData = {
   solicitudes: [
     {
       id: "SOL-2026-00412",
-      type: "acceso",
+      type: "access",
       status: "en_tramite",
       createdAt: "2026-04-01",
       deadline: "2026-04-22",
@@ -286,7 +284,7 @@ export const mockTitularPortal: TitularPortalData = {
     },
     {
       id: "SOL-2026-00318",
-      type: "rectificacion",
+      type: "rectification",
       status: "resuelta",
       createdAt: "2026-03-10",
       deadline: "2026-04-01",
@@ -302,7 +300,7 @@ export const mockTitularPortal: TitularPortalData = {
     },
     {
       id: "SOL-2025-00891",
-      type: "bloqueo",
+      type: "blocking",
       status: "resuelta",
       createdAt: "2025-11-20",
       deadline: "2025-11-22",

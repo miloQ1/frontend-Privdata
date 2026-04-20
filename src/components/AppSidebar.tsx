@@ -121,14 +121,24 @@ export function AppSidebar({ mobileOpen = false, onMobileClose }: AppSidebarProp
             )
           })}
         </ul>
+
+        {/*
+          ── MANTENEDORES (próximas versiones) ──────────────────────────────
+          Aquí se agregarán los módulos de mantenimiento cuando estén listos:
+          - Roles          → /admin/roles
+          - Permisos       → /admin/permisos
+          - Configuración  → /admin/configuracion
+          Mantener esta sección separada de los módulos operativos de arriba.
+          ──────────────────────────────────────────────────────────────────
+        */}
       </nav>
 
-      {/* DEV — Vista del titular */}
+      {/* DEV — Acceso al Portal Titular (solo desarrollo) */}
       <div className="border-t border-sidebar-border px-2 py-2 shrink-0">
         <Link
           to="/portal"
           onClick={mobile ? onMobileClose : undefined}
-          title="Vista Titular (DEV)"
+          title="Portal Titular (DEV)"
           className={cn(
             "flex items-center gap-2 px-3 py-2 rounded-md text-xs transition-colors text-sidebar-foreground/60 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
             collapsed && !mobile && "justify-center px-2"
@@ -137,7 +147,7 @@ export function AppSidebar({ mobileOpen = false, onMobileClose }: AppSidebarProp
           <Eye className="w-4 h-4 shrink-0" />
           {(!collapsed || mobile) && (
             <>
-              <span>Vista Titular</span>
+              <span>Portal Titular</span>
               <span
                 className="ml-auto text-[10px] font-bold px-1.5 py-0.5 rounded"
                 style={{
