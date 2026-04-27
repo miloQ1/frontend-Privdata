@@ -15,6 +15,7 @@ import {
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/hooks/use-auth"
 import { useState } from "react"
+import { ShieldCheck } from "lucide-react"
 
 interface NavItem {
   label: string
@@ -29,6 +30,7 @@ const navItems: NavItem[] = [
   { label: "Consentimientos",    path: "/consentimientos",  icon: FileCheck },
   { label: "Solicitudes ARCO",   path: "/arco",             icon: ClipboardList },
   { label: "Auditoría",          path: "/auditoria",        icon: DatabaseZap },
+  { label: "Roles y permisos", path: "/roles", icon: ShieldCheck },
 ]
 
 interface AppSidebarProps {

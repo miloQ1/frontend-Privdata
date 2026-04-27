@@ -11,6 +11,7 @@ import ArcoPage from "@/pages/ArcoPage"
 import AuditPage from "@/pages/AuditPage"
 import TitularPortalPage from "@/pages/TitularPortalPage"
 import NotFound from "@/pages/NotFound"
+import RolesPage from "@/pages/RolesPage"
 
 const queryClient = new QueryClient()
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/consentimientos" element={<ConsentsPage />} />
             <Route path="/arco"            element={<ArcoPage />} />
             <Route path="/auditoria"       element={<AuditPage />} />
+            <Route path="/roles" element={<RolesPage />} />
           </Route>
 
           {/* 404 */}
