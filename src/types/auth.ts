@@ -80,9 +80,10 @@ export function hasAuthority(authorities: string[], permission: string): boolean
 }
 
 export const KNOWN_PERMISSIONS = [
-  "ROLE_ASSIGN",
-  "USER_CREATE",
-  "ARCO_VIEW",
-  "ARCO_CREATE",
-  "ARCO_UPDATE",
+  "USER_VIEW", "USER_CREATE", "USER_UPDATE", "USER_DELETE",
+  "ROLE_VIEW", "ROLE_ASSIGN",
+  "PERMISSION_VIEW",
+  "ARCO_VIEW", "ARCO_CREATE", "ARCO_RESOLVE",
+  "RAT_VIEW", "RAT_CREATE", "RAT_UPDATE", "RAT_EXPORT",
+  "AUDIT_VIEW",
 ] as const

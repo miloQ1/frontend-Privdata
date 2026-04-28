@@ -177,11 +177,13 @@ export function AppSidebar({ mobileOpen = false, onMobileClose }: AppSidebarProp
         ) : (
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-sidebar-primary flex items-center justify-center text-xs font-bold text-white shrink-0">
-              {user?.name.split(" ").map((n) => n[0]).slice(0, 2).join("") ?? "??"}
+              {user?.email ? user.email[0].toUpperCase() : "??"}
             </div>
             <div className="flex-1 overflow-hidden">
-              <p className="text-xs font-semibold text-sidebar-accent-foreground truncate">{user?.name}</p>
-              <p className="text-xs text-sidebar-foreground/50 truncate capitalize">{user?.role}</p>
+              <p className="text-xs font-semibold text-sidebar-accent-foreground truncate">{user?.email}</p>
+              <p className="text-xs text-sidebar-foreground/50 truncate capitalize">
+                {user?.authorities?.find((a) => a.startsWith("ROLE_"))?.replace("ROLE_", "").toLowerCase() ?? "usuario"}
+              </p>
             </div>
             <button
               onClick={logout}

@@ -5,7 +5,7 @@ import type {
   AssignRoleRequest, CreateRoleRequest,
 } from "@/types/auth"
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080"
+const BASE_URL = import.meta.env.VITE_API_URL ?? "/api"
 
 export const api = axios.create({
   baseURL: BASE_URL,
